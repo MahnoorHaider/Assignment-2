@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculation with two inputs</title>
+    <style>
+        div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+        input{
+            margin-bottom: 0.5em;
+        }
+        form{
+        align-content: center;
+        border: 2ex;
+        border-color: rgb(97, 34, 4);
+        border-style: groove;
+        background-color: rgb(170, 161, 82);
+        padding:24px; 
+    }
+    </style>
+</head>
+<body >
+<div>
+    <form name="calc">
+        Num1: <input type="number" name="Num1" ><br>
+        Num2: <input type="number" name="Num2" >
+        <button type="button" id="btnadd" onclick="add()">+</button>
+        <button type="button" id="btnsub" onclick="sub()">-</button><br>
+        Result: <input type="number" name="textResult" readonly>
+        <button type="button" id="btnmul" onclick="mul()">*</button>
+        <button type="button" id="btndiv" onclick="div()">/</button>
+         </form>
+</div>
+<script>
+    function add()
+    {
+        var x,y,res;
+        x=Number(document.calc.Num1.value);
+        y=Number(document.calc.Num2.value);
+        res=x+y;
+        document.calc.textResult.value=res;
+    }
+    function sub()
+    {
+        var x,y,res;
+        x=Number(document.calc.Num1.value);
+        y=Number(document.calc.Num2.value);
+        res=x-y;
+        document.calc.textResult.value=res;
+    }
+    function mul()
+    {
+        var x,y,res;
+        x=Number(document.calc.Num1.value);
+        y=Number(document.calc.Num2.value);
+        res=x*y;
+        document.calc.textResult.value=res;
+    }
+    function div()
+    {
+        var x,y,res;
+        x=Number(document.calc.Num1.value);
+        y=Number(document.calc.Num2.value);
+       if(y==0)
+        {
+            alert('Illegal operation');
+            document.calc.textResult.value=0;
+            return Null;
+        }
+        res=x/y;
+        document.calc.textResult.value=res;
+        
+    }
+</script>
+</body>
+</html>
